@@ -8,7 +8,7 @@ class Server{
         constructor(){
             this.app = express();
             this.port = 9000;
-                  this.middlewares();
+            this.middlewares();
             this.routes();
             
         }
