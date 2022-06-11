@@ -2,14 +2,16 @@ const nodemailer = require('nodemailer');
 
 const mail = {
 user: 'margri764@feintdevs.com',
-pass: '@bulFeintdevs18'
+pass: '#bulFeintdevs18'
 }
+
 const email  = async( req, res, next) => {  
    
     const { name, email, phone, message } = req.body;
     console.log(req.body);
 
-    //aca necesito validar los campos vacios del correo!!
+    // aca necesito validar los campos vacios del correo!!
+ 
 
     const contentHtml=`
     
