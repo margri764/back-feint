@@ -2,11 +2,14 @@ const nodemailer = require('nodemailer');
 
 const mail = {
 user: 'margri764@feintdevs.com',
-pass: '#bulFeintdevs18'
+pass: '@bulFeintdevs18'
 }
 const email  = async( req, res, next) => {  
    
     const { name, email, phone, message } = req.body;
+    console.log(req.body);
+
+    //aca necesito validar los campos vacios del correo!!
 
     const contentHtml=`
     
@@ -48,7 +51,7 @@ async function sendMail(){
           };
         
         const result = await transporter.sendMail(mailOptions);     
-        res.status(200).json("true")
+        res.status(200).json( {msg: "Email enviado correctamente"})
       
         return result
 
