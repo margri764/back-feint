@@ -1,21 +1,23 @@
 const nodemailer = require('nodemailer');
 
 const mail = {
-user: 'margri764@feintdevs.com',
-pass: 'bulFeintdevs18#'
+          
+    user: 'developer@feintdevs.com',
+    pass: '#bulFeintdevs1820'
 }
+
+
+
 
 const email  = async( req, res, next) => {  
    
     const { name, email, phone, message } = req.body;
-    console.log(req.body);
 
-    // aca necesito validar los campos vacios del correo!!
- 
+  
 
     const contentHtml=`
     
-    <h1> Consulta FeintDevs </h1>
+    <h1> Consulta Revimack Agro </h1>
     <ul>
         <li>name: ${name} </li>
         <li>email: ${email} </li>
@@ -43,17 +45,18 @@ async function sendMail(){
           });
     
 
+          const mailOptions = {
+            from: "Feint dEvs <developer@feintdevs.com>",
+            to: mail.user,
+            subject: "Consulta-Contacto",
+            html: contentHtml,
+        };
       
 
-        const mailOptions = {
-            from: "Formulario de contacto FeintDevs",
-              to: mail.user,
-              subject: "Consulta-Contacto",
-              html: contentHtml,
-          };
+     
         
         const result = await transporter.sendMail(mailOptions);     
-        res.status(200).json( {msg: "Email enviado correctamente"})
+        res.status(200).json("true")
       
         return result
 
